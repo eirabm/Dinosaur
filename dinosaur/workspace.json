@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "dinosaur": "apps/dinosaur",
+    "dinosaur-e2e": "apps/dinosaur-e2e",
+    "ui": "libs/ui"
+  }
+}

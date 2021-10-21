@@ -1,0 +1,42 @@
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
+
+.layout {
+  height: 400px;
+  width: 1200px;
+  position: relative;
+  overflow: hidden;
+  .score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    p {
+      font-family: 'Common Pixel', sans-serif;
+    }
+  }
+  .road {
+    height: 30px;
+    width: 2000px;
+    position: absolute;
+    bottom: 9px;
+    z-index: 1;
+
+    img {
+      height: 30px;
+      width: 3000px;
+      position: absolute;
+      left: 0;
+      animation: roadAnimation 1s linear infinite;
+    }
+  }
+}
+
+@keyframes roadAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1200px;
+  }
+}

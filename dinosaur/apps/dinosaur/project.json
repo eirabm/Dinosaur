@@ -1,0 +1,69 @@
+{
+  "root": "apps/dinosaur",
+  "sourceRoot": "apps/dinosaur/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/dinosaur",
+        "index": "apps/dinosaur/src/index.html",
+        "baseHref": "/",
+        "main": "apps/dinosaur/src/main.tsx",
+        "polyfills": "apps/dinosaur/src/polyfills.ts",
+        "tsConfig": "apps/dinosaur/tsconfig.app.json",
+        "assets": ["apps/dinosaur/src/favicon.ico", "apps/dinosaur/src/assets"],
+        "styles": ["apps/dinosaur/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/dinosaur/src/environments/environment.ts",
+              "with": "apps/dinosaur/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "dinosaur:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "dinosaur:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dinosaur/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dinosaur"],
+      "options": {
+        "jestConfig": "apps/dinosaur/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

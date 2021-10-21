@@ -1,0 +1,18 @@
+.cacti {
+  height: 80px;
+  width: 125px;
+  position: absolute;
+  bottom: 2px;
+  right: -20px;
+  z-index: 4;
+  animation: cactiAnimation 1s linear infinite;
+}
+
+@keyframes cactiAnimation {
+  0% {
+    right: -125px;
+  }
+  100% {
+    right: 100%;
+  }
+}
