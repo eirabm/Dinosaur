@@ -5,21 +5,37 @@
   width: 1200px;
   position: relative;
   overflow: hidden;
+  background-color: #e8f6fe;
   .score {
+    display: flex;
     height: auto;
     width: auto;
     position: absolute;
     top: 20px;
     right: 0;
     p {
+      margin-left: 8px;
       font-family: 'Common Pixel', sans-serif;
+    }
+  }
+  .cloud {
+    height: 400px;
+    width: 1200px;
+    position: absolute;
+    top: 30px;
+    img {
+      height: 80px;
+      width: 2000px;
+      position: absolute;
+      left: -2000px;
+      animation: cloudAnimation 6s linear infinite;
     }
   }
   .road {
     height: 30px;
     width: 2000px;
     position: absolute;
-    bottom: 9px;
+    bottom: 1px;
     z-index: 1;
 
     img {
@@ -38,5 +54,14 @@
   }
   100% {
     left: -1200px;
+  }
+}
+
+@keyframes cloudAnimation {
+  0% {
+    left: -18 00px;
+  }
+  100% {
+    left: 92%;
   }
 }

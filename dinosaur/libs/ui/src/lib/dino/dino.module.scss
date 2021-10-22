@@ -11,20 +11,40 @@
     height: 100px;
     object-fit: none;
     object-position: 0;
-    animation: dinoRun 0.3s steps(4) infinite;
   }
+}
 
-  .active {
-    animation: dinonimation 0.5s linear infinite;
-  }
+.run {
+  animation: dinoRun 0.3s steps(4) infinite;
+}
+
+.jump {
+  animation: dinonimation 0.5s linear infinite;
+}
+
+.crouch {
+  animation: dinoCrouch 0.5s steps(1) infinite;
 }
 
 @keyframes dinoRun {
   from {
-    object-position: 0;
+    object-position: 0.2%;
   }
   to {
     object-position: 52%;
+  }
+}
+
+@keyframes dinoCrouch {
+  0%,
+  100% {
+    width: 116px;
+    object-position: 81%;
+  }
+  45%,
+  55% {
+    width: 112px;
+    object-position: 99%;
   }
 }
 
