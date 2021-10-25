@@ -1,0 +1,53 @@
+.cloud {
+  height: 400px;
+  width: 1200px;
+  position: absolute;
+  top: 30px;
+  img {
+    height: 80px;
+    width: 2000px;
+    position: absolute;
+    left: -2000px;
+  }
+}
+
+.activeCloud {
+  animation: cloudAnimation 6s linear infinite;
+}
+
+.road {
+  height: 30px;
+  width: 2000px;
+  position: absolute;
+  bottom: 1px;
+  z-index: 1;
+
+  img {
+    height: 30px;
+    width: 3000px;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.activeRoad {
+  animation: roadAnimation 1s linear infinite;
+}
+
+@keyframes roadAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1200px;
+  }
+}
+
+@keyframes cloudAnimation {
+  0% {
+    left: -18 00px;
+  }
+  100% {
+    left: 92%;
+  }
+}
