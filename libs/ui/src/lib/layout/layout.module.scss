@@ -6,18 +6,6 @@
   position: relative;
   overflow: hidden;
   background-color: #e8f6fe;
-  .score {
-    display: flex;
-    height: auto;
-    width: auto;
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    p {
-      margin-left: 8px;
-      font-family: 'Common Pixel', sans-serif;
-    }
-  }
 
   .gameOver {
     display: none;

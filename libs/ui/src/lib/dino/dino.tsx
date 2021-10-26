@@ -1,10 +1,4 @@
-import {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from 'react';
+import { forwardRef, useState } from 'react';
 import { render } from 'react-dom';
 import Styles from './dino.module.scss';
 import dinoAsset from './dino.png';

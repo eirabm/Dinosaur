@@ -1,3 +1,4 @@
+export * from './lib/score/score';
 export * from './lib/background/background';
 export * from './lib/cacti/cacti';
 export * from './lib/dino/dino';

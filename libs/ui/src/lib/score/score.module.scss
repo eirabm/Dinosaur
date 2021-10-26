@@ -1,0 +1,27 @@
+.score {
+  display: flex;
+  align-items: baseline;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  p {
+    margin-left: 8px;
+    font-family: 'Common Pixel', sans-serif;
+  }
+}
+
+.highScore {
+  display: flex;
+  align-items: baseline;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  p {
+    margin-left: 8px;
+    font-family: 'Common Pixel', sans-serif;
+  }
+}

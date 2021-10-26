@@ -4,13 +4,12 @@ import { Background } from '../background/background';
 import gameOver from './gameOver.png';
 import Styles from './layout.module.scss';
 import { useEffect, useRef, useState } from 'react';
+import Score from '../score/score';
 
 /* eslint-disable-next-line */
 export interface LayoutProps {}
 
 export function Layout(props: LayoutProps) {
-  const [playerScore, setPlayerScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
   const [startGame, setStartGame] = useState<null | boolean>(null);
   const dinoRef = useRef<HTMLDivElement>(null);
   const cactiRef = useRef<HTMLDivElement>(null);
@@ -35,17 +34,12 @@ export function Layout(props: LayoutProps) {
         .getPropertyValue('left')
     );
 
-    if (cactusLeft < 10 && dinoTop >= 250) {
+    if (cactusLeft < 2 && dinoTop >= 280) {
       setStartGame(false);
-      setPlayerScore(0);
     }
   };
 
   useEffect(() => {
-    if (startGame) {
-      setTimeout(() => setPlayerScore(playerScore + 100), 400);
-    }
-
     const watchCollision = setInterval(() => {
       detectCollision();
     }, 10);
@@ -53,13 +47,11 @@ export function Layout(props: LayoutProps) {
     return () => {
       clearInterval(watchCollision);
     };
-  }, [cactiPosition, dinoPosition, playerScore, startGame]);
+  }, [cactiPosition, dinoPosition, startGame]);
 
   return (
     <div className={Styles.layout}>
-      <div className={Styles.score}>
-        Score:<p>{playerScore}</p>
-      </div>
+      <Score start={startGame} />
 
       <div
         className={Styles.gameOver}
